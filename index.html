@@ -9,95 +9,7 @@
   <meta name="author" content="Iago Barreto - Designer Gráfico e Desenvolvedor Web">
   <meta http-equiv="X-Frame-Options" content="deny">
   <title>Slider de Imagens - Apresentação</title>
-  <!-- Arquivo CSS -->
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #e2e2e2, #ffffff);
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    h1 {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    /* Slider container */
-    .slider-container {
-      width: 70%;
-      height: 300px;
-      position: relative;
-      overflow: hidden;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .slide {
-      display: flex;
-      width: 500%;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide img {
-      width: 20%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Botões de controle */
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 15px;
-      cursor: pointer;
-      font-size: 24px;
-      border-radius: 50%;
-      transition: background-color 0.3s;
-    }
-
-    .prev {
-      left: 10px;
-    }
-
-    .next {
-      right: 10px;
-    }
-
-    .prev:hover, .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    /* Rodapé */
-    .footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 5px 0;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -120,26 +32,6 @@
     <p>© 2025 - Todos os direitos reservados.</p>
   </footer>
 
-  <script>
-    let currentIndex = 0;
-    const totalSlides = 5; // Total de slides
-
-    // Função para mover o slide
-    function moveSlide(step) {
-      const slides = document.querySelector('.slide');
-      currentIndex = (currentIndex + step + totalSlides) % totalSlides;
-      const offset = -(currentIndex * 100 / totalSlides);
-      slides.style.transform = `translateX(${offset}%)`;
-    }
-
-    // Função para o slide automático
-    function autoSlide() {
-      moveSlide(1);
-    }
-
-    // Iniciar o slide automático a cada 3 segundos
-    setInterval(autoSlide, 3000);
-  </script>
-
+  <script src="./js/script.js"></script>
 </body>
 </html>
